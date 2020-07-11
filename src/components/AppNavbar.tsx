@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export enum AppRoutes {
@@ -32,9 +32,31 @@ const Navbar = styled.nav`
 const AppNavbar = () => (
   <Navbar>
     <ul>
-      <li><Link to={AppRoutes.home}>Home</Link></li>
-      <li><Link to={AppRoutes.about}>About</Link></li>
-      <li><Link to={AppRoutes.topics}>Topics</Link></li>
+      <li>
+        <NavLink
+          activeStyle={{color:'red'}}
+          exact={true}
+          to={AppRoutes.home}
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeStyle={{color:'red'}}
+          to={AppRoutes.about}
+        >
+          About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeStyle={{color:'red'}}
+          to={AppRoutes.topics}
+        >
+          Topics
+        </NavLink>
+      </li>
     </ul>
   </Navbar>
 );
