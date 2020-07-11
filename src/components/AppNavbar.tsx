@@ -1,13 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
-export enum AppRoutes {
-  home = '/',
-  about = '/about',
-  topics = '/topics',
-  topicId = '/topics/:topicId',
-}
+import { AppRoutes } from '../App';
 
 const Navbar = styled.nav`
   background: blue;
@@ -55,6 +49,14 @@ const AppNavbar = () => (
           to={AppRoutes.topics}
         >
           Topics
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeStyle={{color:'red'}}
+          to={AppRoutes.queryStrings}
+        >
+          Query Strings
         </NavLink>
       </li>
     </ul>

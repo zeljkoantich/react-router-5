@@ -2,11 +2,20 @@ import React from 'react';
 import AppHeader from './components/AppHeader';
 import styled from 'styled-components';
 import { Route } from 'react-router-dom';
-import { AppRoutes } from './components/AppNavbar';
 import AppHome from './components/pages/AppHome';
 import AppAbout from './components/pages/AppAbout';
 import AppTopics from './components/pages/topics/AppTopics';
 import AppTopicDetail from './components/pages/topics/AppTopicDetail';
+import AppQueryStrings from './components/pages/AppQueryStrings';
+
+export enum AppRoutes {
+  home = '/',
+  about = '/about',
+  topics = '/topics',
+  topicId = '/topics/:topicId',
+  queryStrings = '/queryStrings'
+}
+
 
 const AppContainer = styled.div`
   height: 100%;
@@ -19,8 +28,17 @@ const App = (props: any) => (
     <Route path={AppRoutes.home} exact component={AppHome} />
     <Route path={AppRoutes.about} component={AppAbout} />
     <Route path={AppRoutes.topics} component={AppTopics} />
+    <Route path={AppRoutes.queryStrings} component={AppQueryStrings} />
 
     <Route path={AppRoutes.topicId} component={AppTopicDetail} />
+
+    {/* <Switch>
+      <Route path={AppRoutes.home} exact component={AppHome} />
+      <Route path={AppRoutes.about} exact component={AppAbout} />
+      <Route path={AppRoutes.topics} exact component={AppTopics} />
+
+      <Route path={AppRoutes.topicId} exact component={AppTopicDetail} />
+    </Switch> */}
 
     {/* <Route path={AppRoutes.home}>
       <AppHome />
