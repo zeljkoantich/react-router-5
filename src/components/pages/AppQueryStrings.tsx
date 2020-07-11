@@ -7,7 +7,9 @@ const AppQueryStrings = (
 ) => {
   const useL = useLocation();
   console.log(useL);
-  console.log('a === params.location: ', (useL as any) === params.location); // true
+  console.log('useL === params.location: ', (useL as any) === params.location); // true
+  console.log('useL === dereferenced.params.location: ', (useL as any) === {...params.location}); // false
+
   console.log(params.location);
   console.log(params.match);
 

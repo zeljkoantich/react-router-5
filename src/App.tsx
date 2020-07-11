@@ -13,7 +13,7 @@ export enum AppRoutes {
   about = '/about',
   topics = '/topics',
   topicId = '/topics/:topicId',
-  queryStrings = '/queryStrings'
+  queryStrings = '/query-strings'
 }
 
 
